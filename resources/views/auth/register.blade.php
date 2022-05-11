@@ -25,6 +25,30 @@
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
             </div>
+            <!-- login -->
+            <div class="mt-4 ">
+                <x-label for="login" :value="__('login')" />
+
+                <x-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required />
+            </div>
+            <!-- role -->
+            <div class="my-5">
+            <div >
+                <input type="radio" id="admin" name="role" value="admin"
+                       checked>
+                <label for="huey">admin</label>
+              </div>
+          
+              <div>
+                <input type="radio" id="resp" name="role" value="resp">
+                <label for="dewey">responsable de filiere</label>
+              </div>
+          
+              <div>
+                <input type="radio" id="eleve" name="role" value="eleve">
+                <label for="louie">eleve</label>
+              </div>
+            </div>
 
             <!-- Password -->
             <div class="mt-4">
