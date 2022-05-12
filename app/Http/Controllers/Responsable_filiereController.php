@@ -14,7 +14,8 @@ class Responsable_filiereController extends Controller
      */
     public function index()
     {
-        return view('admin/resp_manip/resp_index');
+        $resp=Responsable_filiere::all();
+        return view('admin/resp_manip/resp_index',compact('resp'));
     }
 
     /**
@@ -63,7 +64,9 @@ class Responsable_filiereController extends Controller
      */
     public function edit($id)
     {
-        //
+        $resp = Responsable_filiere::findorfail($id);
+        
+        return view('admin\resp_manip\edit_resp' , compact('resp'));
     }
 
     /**
@@ -73,9 +76,16 @@ class Responsable_filiereController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
-        //
+        $resp = Responsable_filiere::findorfail($id); 
+        $resp->nom =$request->nom;
+        $resp->prenom =$request->prenom;
+        $resp->departement =$request->departement;
+        $resp->login =$request->login;
+        $resp->update();
+        return redirect()->back()->with('status','responsable updated successfully');
     }
 
     /**
@@ -86,6 +96,8 @@ class Responsable_filiereController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $resp = Responsable_filiere::findorfail($id);
+        $resp->delete();
+        return redirect()->back()->with('status','responsable delted successfully');
     }
 }

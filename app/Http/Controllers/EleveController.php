@@ -12,8 +12,9 @@ class EleveController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('admin/eleve_manip/eleve_index');
+    {   
+        $students=Eleve::all();
+        return view('admin/eleve_manip/eleve_index',compact('students'));
     }
 
     /**
@@ -42,7 +43,7 @@ class EleveController extends Controller
         $eleve->code_fil =$request->code_fil;
         $eleve->login =$request->login;
         $eleve->save();
-        return redirect()->back()->with('status','eleve added successfully');
+            return redirect()->back()->with('status','eleve added successfully');
     }
 
     /**
@@ -63,8 +64,11 @@ class EleveController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
+
     {
-        //
+        $eleve = Eleve::findorfail($id);
+        
+        return view('admin\eleve_manip\edit_eleve' , compact('eleve'));
     }
 
     /**
@@ -75,8 +79,18 @@ class EleveController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-        //
+    {   
+        $eleve = Eleve::findorfail($id); 
+        $eleve->code = $request->code;
+        $eleve->nom =$request->nom;
+        $eleve->prenom =$request->prenom;
+        $eleve->niveau =$request->niveau;
+        $eleve->code_fil =$request->code_fil;
+        $eleve->login =$request->login;
+        $eleve->update();
+        return redirect()->back()->with('status','eleve updated successfully');
+
+
     }
 
     /**
@@ -87,6 +101,9 @@ class EleveController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $eleve = Eleve::findorfail($id);
+        $eleve->delete();
+        return redirect()->back()->with('status','eleve delted successfully');
+
     }
 }
