@@ -25,6 +25,7 @@
 
     <br><a href="{{url('Eleves')}}">modify eleve</a>
     <br><a href="{{url('Responsable_filieres')}}">modify Responsable_filiere</a>
+    <br><a href="{{url('Filieres')}}">modify filiere</a>
 
     
 </body>

@@ -15,5 +15,10 @@
     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
         {{ csrf_field() }}
     </form>
+
+    <br><a href="{{url('Modules')}}">modify modules</a>
+    <br><a href="{{url('Element_Modules')}}">modify elements</a>
+    <br><a href="{{url('Notes')}}">modify notes</a>
+
 </body>
 </html>

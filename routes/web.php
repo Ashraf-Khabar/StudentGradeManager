@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EleveController;
 use App\Http\Controllers\Responsable_filiereController;
+use App\Http\Controllers\FiliereController;
+use App\Http\Controllers\ModuleController;
+use App\Http\Controllers\Element_ModuleController;
+use App\Http\Controllers\NotesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +48,15 @@ Route::middleware(['auth', 'admin'])->group(function(){
 
     Route::resource('Eleves',EleveController::class);
     Route::resource('Responsable_filieres',Responsable_filiereController::class);
+    Route::resource('Filieres',FiliereController::class);
+
+
+});
+
+Route::middleware(['auth', 'resp'])->group(function(){
+    Route::resource('Modules',ModuleController::class);
+    Route::resource('Element_Modules',Element_ModuleController::class);
+    Route::resource('Notes',NotesController::class);
 
 
 });
