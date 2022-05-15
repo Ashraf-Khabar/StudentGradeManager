@@ -8,24 +8,24 @@
 </head>
 <body>
 <!-- Example Code -->
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg " style="background-color: #2d3748">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand" href="{{route('welcome')}}">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="nav-link active" >Register</a>
+                        <a style="color: #dc3855" href="{{ route('register') }}" class="nav-link active" >Register</a>
                     @endif
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/messages">Messages</a>
+                    <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a style="color: #dc3855" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Modify
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -35,7 +35,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Logout</a>
+                    <a style="color: #dc3855" class="nav-link active" href="#">Logout</a>
                 </li>
             </ul>
         </div>
