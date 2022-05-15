@@ -16,7 +16,7 @@
             src="/assets/img/monLogo.png?h=72d8733f107fd1fc0ee29766f4f7e9d6">
     </div>
     <div class="text-center" style="margin-top: 41px;height: 100.2px;"><p
-            style="font-family: 'Archivo Black', sans-serif;color: var(--bs-gray-dark);font-size: 26px;">Student
+            style="font-family: 'Archivo Black', sans-serif;color: #b72929;font-size: 26px;">Student
             Management</p>
     </div>
     <div class="text-center" style="margin-top: 46px;">
@@ -28,7 +28,7 @@
         @if (Route::has('login'))
             @auth
             <a href="{{ url('/dashboard') }}" class="btn btn-primary" type="button"
-                    style="border-radius: 27px;background:#ffa726;font-weight: bold;margin-top: 97px;">Dashboard
+                    style="border-radius: 27px;background:midnightblue;font-weight: bold;margin-top: 97px;">Dashboard
             </a>
             @else
                 <a href="{{ route('login') }}" class="bt btn btn-primary" type="button"
@@ -38,7 +38,7 @@
         @endif
     </div>
     <div class="text-center" style="margin-top: 38px;">
-        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #253594">
+        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #d3265c">
             <i class="fa fa-github" style="font-size: 47px;">
             </i>
         </a>
