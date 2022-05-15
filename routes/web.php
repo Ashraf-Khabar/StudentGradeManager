@@ -27,9 +27,6 @@ Route::get('/dashboard', function () {
     return redirect('admin_dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-//Route::middleware(['auth'])->group( function (){
-//    Route::view('/messages','vendor.Chatify.pages.app')->name('messages') ;
-//});
 
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');

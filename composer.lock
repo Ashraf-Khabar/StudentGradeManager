@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d0996f1def6358c2e89c7b54100b06bd",
+    "content-hash": "8f6e66121c4c51345db1ed426cdc9fcc",
     "packages": [
         {
             "name": "brick/math",
@@ -5340,16 +5340,16 @@
         },
         {
             "name": "yajra/laravel-oci8",
-            "version": "v9.0.0",
+            "version": "v9.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-oci8.git",
-                "reference": "6a6a7d3e69cd3d8a5ebb766b98de874cdfb699ec"
+                "reference": "f0e7e9a847c13d1ef02efa68c1c26bb2adb14821"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-oci8/zipball/6a6a7d3e69cd3d8a5ebb766b98de874cdfb699ec",
-                "reference": "6a6a7d3e69cd3d8a5ebb766b98de874cdfb699ec",
+                "url": "https://api.github.com/repos/yajra/laravel-oci8/zipball/f0e7e9a847c13d1ef02efa68c1c26bb2adb14821",
+                "reference": "f0e7e9a847c13d1ef02efa68c1c26bb2adb14821",
                 "shasum": ""
             },
             "require": {
@@ -5363,6 +5363,7 @@
                 "yajra/laravel-pdo-via-oci8": "^3.0"
             },
             "require-dev": {
+                "doctrine/dbal": "^3.3",
                 "mockery/mockery": "^1.4.4",
                 "orchestra/testbench": "^7.0",
                 "phpunit/phpunit": "^9.5.8"
@@ -5406,7 +5407,7 @@
             ],
             "support": {
                 "issues": "https://github.com/yajra/laravel-oci8/issues",
-                "source": "https://github.com/yajra/laravel-oci8/tree/v9.0.0"
+                "source": "https://github.com/yajra/laravel-oci8/tree/v9.0.1"
             },
             "funding": [
                 {
@@ -5418,7 +5419,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-02-09T05:24:31+00:00"
+            "time": "2022-05-12T02:53:17+00:00"
         },
         {
             "name": "yajra/laravel-pdo-via-oci8",
@@ -8187,5 +8188,5 @@
         "php": "^8.0.2"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
