@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="/assets/css/styles.min.css?h=6e0c1425437cc83bc19e4f65349ea72d">
 </head>
 <body>
+
+<section>
     <div class="text-center" style="margin-top: 60px;">
-        <img
-            src="/assets/img/monLogo.png?h=72d8733f107fd1fc0ee29766f4f7e9d6">
+        <a href="{{route('welcome')}}">
+            <img src="/assets/img/monLogo.png?h=72d8733f107fd1fc0ee29766f4f7e9d6">
+        </a>
     </div>
     <div class="text-center" style="margin-top: 41px;height: 100.2px;"><p
             style="font-family: 'Archivo Black', sans-serif;color: #b72929;font-size: 26px;">Student
@@ -27,9 +30,9 @@
     <div class="text-center" style="margin-top: 33px;">
         @if (Route::has('login'))
             @auth
-            <a href="{{ url('/dashboard') }}" class="btn btn-primary" type="button"
-                    style="border-radius: 27px;background:midnightblue;font-weight: bold;margin-top: 97px;">Dashboard
-            </a>
+                <a href="{{ url('/dashboard') }}" class="btn btn-primary" type="button"
+                   style="border-radius: 27px;background:midnightblue;font-weight: bold;margin-top: 97px;">Dashboard
+                </a>
             @else
                 <a href="{{ route('login') }}" class="bt btn btn-primary" type="button"
                    style="border-radius: 27px;background:midnightblue;font-weight: bold;margin-top: 97px;">Log in
@@ -38,13 +41,15 @@
         @endif
     </div>
     <div class="text-center" style="margin-top: 38px;">
-        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #d3265c">
+        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #f3f3f3">
             <i class="fa fa-github" style="font-size: 47px;">
             </i>
         </a>
 
     </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="/assets/js/script.min.js?h=61b199fb697993962b723c8a3c9b2b78"></script>
 </body>
 </html>

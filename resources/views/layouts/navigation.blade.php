@@ -10,7 +10,9 @@
 <!-- Example Code -->
 <nav class="navbar navbar-expand-lg " style="background-color: #2d3748">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{route('welcome')}}">Navbar</a>
+        <a class="navbar-brand" href="{{route('welcome')}}">
+            <img src="../assets/img/monLogo.png" width="45px">
+        </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,9 +31,9 @@
                         Modify
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#">Modify student</a></li>
-                        <li><a class="dropdown-item" href="#">modify Responsable_filiere</a></li>
-                        <li><a class="dropdown-item" href="#">modify filiere</a></li>
+                        <li><a class="dropdown-item" href="{{url('Eleves')}}">Modify student</a></li>
+                        <li><a class="dropdown-item" href="{{url('Responsable_filieres')}}">modify Responsable_filiere</a></li>
+                        <li><a class="dropdown-item" href="{{url('Filieres')}}">modify filiere</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
