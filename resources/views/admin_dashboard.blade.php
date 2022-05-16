@@ -14,7 +14,7 @@
 <section>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{route('admin_dashboard')}}">
+            <a class="navbar-brand" href="{{route('welcome')}}">
                 <img src="../assets/img/monLogo.png" width="70px">
             </a>
             <button style="background-color: #dc3855" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,7 @@
             <div class="col-12 text-center col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
                 <div class="text-center icon-box">
                     <div class="icon"><i class="fas fa-book-open" style="margin-bottom: 15px;"></i><h4 class="title">
-                            <a href="{{url('Responsable_filieres')}}">Filieres</a></h4>
+                            <a href="{{url('Filieres')}}">Filieres</a></h4>
                         <p class="description">Ce champs consite a visualiser les filieres , avec les responsables
                             des filieres , plus la possibilite de modification .<br>&nbsp; &nbsp; &nbsp;&nbsp;</p></div>
                 </div>
