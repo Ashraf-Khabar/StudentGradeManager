@@ -19,25 +19,15 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    @if (Route::has('register'))
-                        <a style="color: #dc3855" href="{{ route('register') }}" class="nav-link active" >Register</a>
-                    @endif
-                </li>
-                <li class="nav-item">
                     <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a style="color: #dc3855" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Modify
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="{{url('Eleves')}}">Modify student</a></li>
-                        <li><a class="dropdown-item" href="{{url('Responsable_filieres')}}">modify Responsable_filiere</a></li>
-                        <li><a class="dropdown-item" href="{{url('Filieres')}}">modify filiere</a></li>
-                    </ul>
-                </li>
                 <li class="nav-item">
-                    <a style="color: #dc3855" class="nav-link active" href="#">Logout</a>
+                    <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
                 </li>
             </ul>
         </div>
