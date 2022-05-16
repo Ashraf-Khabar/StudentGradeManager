@@ -12,8 +12,11 @@
 </head>
 <body>
     <div class="text-center" style="margin-top: 60px;">
-        <img
-            src="/assets/img/monLogo.png?h=72d8733f107fd1fc0ee29766f4f7e9d6">
+        <a href="{{route('welcome')}}">
+            <img src="/assets/img/monLogo.png?h=72d8733f107fd1fc0ee29766f4f7e9d6">
+        </a>
+
+
     </div>
     <div class="text-center" style="margin-top: 41px;height: 100.2px;"><p
             style="font-family: 'Archivo Black', sans-serif;color: #b72929;font-size: 26px;">Student
@@ -38,7 +41,7 @@
         @endif
     </div>
     <div class="text-center" style="margin-top: 38px;">
-        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #d3265c">
+        <a href="https://github.com/Ashraf-Khabar/Platform-of-management-of-students/branches" style="color: #f3f3f3">
             <i class="fa fa-github" style="font-size: 47px;">
             </i>
         </a>
