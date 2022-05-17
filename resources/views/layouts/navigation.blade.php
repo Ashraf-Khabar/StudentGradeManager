@@ -22,9 +22,10 @@
                     <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                 </li>
                 <li class="nav-item">
-                    <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        Logout
-                    </a>
+                        <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
