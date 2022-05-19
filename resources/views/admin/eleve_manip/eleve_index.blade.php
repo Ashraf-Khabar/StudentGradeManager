@@ -17,7 +17,6 @@
         <div class="main">
             <h1 style="color: red">Student Informations</h1><br><br>
             <a style="text-decoration: none" class="button-24" role="button" href="{{url('admin_dashboard')}}">back</a>
-            <a style="text-decoration: none" class="button-24" role="button" href="{{url('Eleves/create')}}">create</a>
             <br><br>
             <h5>{{session('status')}}</h5>
         </div>
@@ -28,8 +27,7 @@
             <tr style="color: #be0a38 ; font-size: 15px">
                 <th>ID</th>
                 <th>code</th>
-                <th>nom</th>
-                <th>prenom</th>
+                <th>nom et prenom</th>
                 <th>niveau</th>
                 <th>code filiere</th>
                 <th>login</th>
@@ -45,7 +43,6 @@
                     <td>{{$item->id}}</td>
                     <td>{{$item->code}}</td>
                     <td>{{$item->nom}}</td>
-                    <td>{{$item->prenom}}</td>
                     <td>{{$item->niveau}}</td>
                     <td>{{$item->code_fil}}</td>
                     <td>{{$item->login}}</td>
