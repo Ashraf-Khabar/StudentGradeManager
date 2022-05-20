@@ -37,7 +37,7 @@
                         <input type="text" name="login" value="AAA"><br>
 
                         <br>
-                        <button class="button-24" role="button" type="submit" value="register">register<button>
+                        <button class="button-24" role="button" type="submit" value="register">register</button>
                     </div>
                 </form>
                 <center>
