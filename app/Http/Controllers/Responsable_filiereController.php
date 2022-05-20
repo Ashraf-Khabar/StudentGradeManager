@@ -65,8 +65,8 @@ class Responsable_filiereController extends Controller
     public function edit($id)
     {
         $resp = Responsable_filiere::findorfail($id);
-        
-        return view('admin\resp_manip\edit_resp' , compact('resp'));
+
+        return view('admin.resp_manip.edit_resp' , compact('resp'));
     }
 
     /**
@@ -79,7 +79,7 @@ class Responsable_filiereController extends Controller
 
     public function update(Request $request, $id)
     {
-        $resp = Responsable_filiere::findorfail($id); 
+        $resp = Responsable_filiere::findorfail($id);
         $resp->nom =$request->nom;
         $resp->prenom =$request->prenom;
         $resp->departement =$request->departement;

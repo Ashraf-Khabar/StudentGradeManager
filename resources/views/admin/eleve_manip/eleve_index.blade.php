@@ -47,8 +47,8 @@
                     <td>{{$item->code_fil}}</td>
                     <td>{{$item->login}}</td>
                     <td>
-                        <form action="{{url('Eleves/'.$item->id)}}" method="POST">
-                            <a href="{{url('Eleves/'.$item->id.'/edit')}}" class="btn btn-success" style="margin-left: 5px;" type="submit"><i
+                        <form action="{{asset('Eleves/'.$item->id)}}" method="POST">
+                            <a href="{{asset('Eleves/'.$item->id.'/edit')}}" class="btn btn-success" style="margin-left: 5px;" type="submit"><i
                                     class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
                             @csrf
                             @method('DELETE')

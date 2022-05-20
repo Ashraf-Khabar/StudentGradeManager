@@ -64,8 +64,8 @@ class FiliereController extends Controller
     public function edit($id)
     {
         $filiere = Filiere::findorfail($id);
-        
-        return view('admin\filiere_manip\edit_filiere' , compact('filiere'));
+
+        return view('admin.filiere_manip.edit_filiere' , compact('filiere'));
     }
 
     /**
@@ -77,7 +77,7 @@ class FiliereController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $filiere = Filiere::findorfail($id); 
+        $filiere = Filiere::findorfail($id);
         $filiere->code = $request->code;
         $filiere->designation =$request->designation;
         $filiere->responsable =$request->responsable;

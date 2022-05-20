@@ -17,7 +17,7 @@
         <x-guest-layout>
             <x-auth-card>
                 <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                <center>
+                <div style="text-align: center;">
                     @auth
                         @if (session('status'))
                             <div style="color: red; font-size: 30px"><i class="bi bi-check"></i> succefully</div>
@@ -51,7 +51,7 @@
                         </center>
                         </form>
                     @endauth
-                </center>
+                </div>
             </x-auth-card>
         </x-guest-layout>
 
