@@ -19,3 +19,14 @@ end if ;
 end;    
     /
 ```
+
+```html
+<form action="{{url('Eleves/'.$item->id)}}" method="POST">
+                            <a href="{{url('Eleves/'.$item->id.'/edit')}}" class="btn btn-success" style="margin-left: 5px;" type="submit"><i
+                                    class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-success" style="margin-left: 5px;background: rgb(218,13,50);" type="submit">
+                                <i class="fa fa-close" style="font-size: 20px;"></i></button>
+                        </form>
+```
