@@ -1,9 +1,7 @@
 # Triggers : 
 
 [Users Triggers](#users-triger-)<br>
-[Users Triggers](#users-triger-)<br>
-[Users Triggers](#users-triger-)<br>
-[Users Triggers](#users-triger-)<br>
+
 
 #### Users triger : 
 ```sql
