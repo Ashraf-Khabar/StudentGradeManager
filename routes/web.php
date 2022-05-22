@@ -32,9 +32,10 @@ Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 })->middleware(['auth', 'admin'])->name('admin_dashboard');
 
-Route::get('/resp_dashboard', function () {
-    return view('resp_dashboard');
-})->middleware(['auth', 'resp'])->name('resp_dashboard');
+Route::get('/resp_dashboard', [EleveController::class, 'send_stu']
+)->middleware(['auth', 'resp'])->name('resp_dashboard');
+
+
 
 Route::get('/eleve_dashboard', function () {
     return view('eleve_dashboard');
@@ -56,7 +57,7 @@ Route::middleware(['auth', 'resp'])->group(function(){
     Route::resource('Modules',ModuleController::class);
     Route::resource('Element_Modules',Element_ModuleController::class);
     Route::resource('Notes',NotesController::class);
-
+    Route::get('moyennes/{id}',[NotesController::class,'show_moy']);
 
 });
 

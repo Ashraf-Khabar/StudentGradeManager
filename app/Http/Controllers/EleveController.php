@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Eleve;
+use Illuminate\Support\Facades\DB;
+use Auth;
+
 class EleveController extends Controller
 {
     /**
@@ -104,5 +107,27 @@ class EleveController extends Controller
         $eleve->delete();
         return redirect()->back()->with('status','eleve delted successfully');
 
+    }
+
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     * 
+     * 
+     */
+    
+    public function send_stu()
+    {
+        //$notes=Notes::all();
+
+        $user = Auth::user();
+        $students = DB::table('users')
+            ->join('filieres', 'users.login', '=', 'filieres.responsable')
+            ->join('eleves','eleves.code_fil','=','filieres.code')
+            ->select('eleves.*')
+            ->where('users.id','=',$user->id)
+            ->get();
+        return view('\resp_dashboard',compact('students'));
     }
 }
