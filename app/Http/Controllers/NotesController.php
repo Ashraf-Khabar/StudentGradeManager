@@ -15,7 +15,7 @@ class NotesController extends Controller
     public function index()
     {
         $notes=Notes::all();
-        return view('responsable\note_manip\note_index',compact('notes'));
+        return view('responsable.note_manip.note_index',compact('notes'));
     }
 
     /**
@@ -25,7 +25,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('responsable\note_manip\create_note');
+        return view('responsable.note_manip.create_note');
     }
 
     /**
@@ -64,8 +64,8 @@ class NotesController extends Controller
     public function edit($id)
     {
         $note = Notes::findorfail($id);
-        
-        return view('responsable\note_manip\edit_note' , compact('note'));
+
+        return view('responsable.note_manip.edit_note' , compact('note'));
     }
 
     /**
@@ -77,7 +77,7 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $note = Notes::findorfail($id); 
+        $note = Notes::findorfail($id);
         $note->code_eleve = $request->code_eleve;
         $note->code_elm_mod =$request->code_elm_mod;
         $note->note =$request->note;
