@@ -22,11 +22,10 @@ begin
         if :NEW.ROLE = 'eleve' then
             delete from ELEVES where ID = :OLD.ID ;
         elsif :NEW.ROLE = 'resp' then
-            delete from RESPONSABLE_FILIERES(ID, NOM, PRENOM, DEPARTEMENT, LOGIN, CREATED_AT, UPDATED_AT)
+            delete from RESPONSABLE_FILIERES where ID = :OLD.ID ;
+        else
+            raise_application_error(-2202020 , 'EROOR MESSAGE') ;
         end if ;
-    else
-        raise_application_error(-2202020 , 'EROOR MESSAGE') ;
     end if ;
-end; 
-    /
+end;
 ```
