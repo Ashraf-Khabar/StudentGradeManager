@@ -34,7 +34,6 @@
                 <th>vh</th>
                 <th>pois</th>
                 <th>code module</th>
-                <th>Opperations</th>
             </tr>
             </thead>
             <tbody>
