@@ -27,13 +27,14 @@
     <div class="table-responsive table table-hover table-bordered results">
         <table class="table table-hover table-bordered" >
             <thead class="bill-header cs">
-            <tr>
+            <tr style="color: #be0a38 ; font-size: 15px">
                 <th>ID</th>
                 <th>code</th>
                 <th>designation</th>
                 <th>vh</th>
                 <th>pois</th>
                 <th>code module</th>
+                <th>Opperations</th>
             </tr>
             </thead>
             <tbody>
@@ -41,7 +42,7 @@
                 <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
             </tr>
             @foreach ($elements as $item)
-                <tr>
+                <tr style="color: #decdcd ; background-color: #2c2929" >
                     <td>{{$item->id}}</td>
                     <td>{{$item->code}}</td>
                     <td>{{$item->designation}}</td>
