@@ -16,7 +16,6 @@
         <div class="main">
             <h1 style="color: red">Student Informations</h1><br><br>
             <a style="text-decoration: none" class="button-24" role="button" href="{{url('admin_dashboard')}}">back</a>
-            <a style="text-decoration: none" class="button-24" role="button" href="{{url('Responsable_filieres/create')}}">create</a>
             <br><br>
             <h5>{{session('status')}}</h5>
         </div>

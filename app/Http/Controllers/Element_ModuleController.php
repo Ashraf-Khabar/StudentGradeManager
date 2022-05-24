@@ -15,7 +15,7 @@ class Element_ModuleController extends Controller
     public function index()
     {
         $elements=Element_Module::all();
-        return view('responsable\elem_manip\element_module_index',compact('elements'));
+        return view('responsable.elem_manip.element_module_index',compact('elements'));
     }
 
     /**
@@ -25,7 +25,7 @@ class Element_ModuleController extends Controller
      */
     public function create()
     {
-        return view('responsable\elem_manip\create_element_module');
+        return view('responsable.elem_manip.create_element_module');
     }
 
     /**
@@ -66,8 +66,8 @@ class Element_ModuleController extends Controller
     public function edit($id)
     {
         $element = Element_Module::findorfail($id);
-        
-        return view('responsable\elem_manip\edit_element_module' , compact('element'));
+
+        return view('responsable.elem_manip.edit_element_module' , compact('element'));
     }
 
     /**
@@ -79,7 +79,7 @@ class Element_ModuleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $element = Element_Module::findorfail($id); 
+        $element = Element_Module::findorfail($id);
         $element->code = $request->code;
         $element->designation =$request->designation;
         $element->vh =$request->vh;

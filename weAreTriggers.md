@@ -5,28 +5,104 @@
 
 #### Users triger : 
 ```sql
-create trigger TRIGGER_USER
-    after insert or update or delete
-                    on USERS
-                        for each row
+create or replace trigger TRIGGER_USER
+    after insert or delete
+    on USERS
+    for each row
 begin
-        if inserting then
+    if inserting then
+        if :NEW.ROLE = 'eleve' then
             insert into ELEVES (ID, CODE, NOM, PRENOM, NIVEAU, CODE_FIL, LOGIN, CREATED_AT, UPDATED_AT)
             values (:NEW.ID , dbms_random.string('U', 8) , :NEW.NAME , :NEW.NAME , 'GINF1' , '1' , :NEW.login , :NEW.CREATED_AT , :NEW.UPDATED_AT ) ;
-else
-            raise_application_error(-20000,'erreur') ;
-end if ;
-end;    
-    /
+        elsif :NEW.ROLE = 'resp' then
+            insert into RESPONSABLE_FILIERES(ID, NOM, PRENOM, DEPARTEMENT, LOGIN, CREATED_AT, UPDATED_AT)
+            VALUES (:NEW.ID , :NEW.NAME , :NEW.NAME , '----' , :NEW.LOGIN , :NEW.CREATED_AT , :NEW.UPDATED_AT) ;
+        end if ;
+    elsif deleting then
+        if :NEW.ROLE = 'eleve' then
+            delete from ELEVES where ID = :OLD.ID ;
+        elsif :NEW.ROLE = 'resp' then
+            delete from RESPONSABLE_FILIERES where ID = :OLD.ID ;
+        else
+            raise_application_error(-2202020 , 'EROOR MESSAGE') ;
+        end if ;
+    end if ;
+end;
 ```
 
-```html
-<form action="{{url('Eleves/'.$item->id)}}" method="POST">
-                            <a href="{{url('Eleves/'.$item->id.'/edit')}}" class="btn btn-success" style="margin-left: 5px;" type="submit"><i
-                                    class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-success" style="margin-left: 5px;background: rgb(218,13,50);" type="submit">
-                                <i class="fa fa-close" style="font-size: 20px;"></i></button>
-                        </form>
+#### Moy Trigger : 
+```sql
+create or replace trigger MOY_INSERT_TRIGGER
+    after insert
+    on NOTES
+    for each row
+declare
+    Moy float ;
+    Code_filiere varchar(255) ;
+    Level_etu varchar(255) ;
+    Num_matiere number ;
+    Num_note number ;
+begin
+    select AVG(NOTE) into Moy from NOTES where CODE_ELEVE = :NEW.CODE_ELEVE ;
+    select NIVEAU into Level_etu from ELEVES where ELEVES.CODE = new.CODE_ELEVE;
+    select FIL.CODE into Code_filiere from FILIERES FIL , ELEVES ELE where ELE.CODE_FIL = FIL.CODE and ELE.CODE = :NEW.CODE_ELEVE;
+
+    select count(*) into Num_matiere from FILIERES FIL , MODULES MOD , ELEMENT__MODULES ELEM_MOD where FIL.CODE = MOD.CODE_FIL
+                                                                                                   and MOD.CODE = ELEM_MOD.CODE_MOD and FIL.CODE = Code_filiere and MOD.NIVEAU = Level_etu ;
+
+    select count(*) into Num_note from NOTES where CODE_ELEVE = :NEW.CODE_ELEVE ;
+
+    if Num_matiere = Num_note then
+        insert into MOYENNES (ID, CODE_ELEVE, CODE_FIL, NIVEAU, NOTE, CREATED_AT, UPDATED_AT)
+        values (:NEW.ID , :NEW.CODE_ELEVE , :NEW.CODE_FIL, :NEW.NIVEAU , :NEW.NOTE , :NEW.CREATED_AT , :NEW.UPDATED_AT ) ;
+    end if ;
+end ;
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

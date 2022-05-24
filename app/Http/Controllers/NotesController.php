@@ -19,19 +19,8 @@ class NotesController extends Controller
 
     public function index()
     {
-        //$notes=Notes::all();
-
-        $user = Auth::user();
-        $notes = DB::table('users')
-            ->join('filieres', 'users.login', '=', 'filieres.responsable')
-            ->join('eleves','eleves.code_fil','=','filieres.code')
-            ->join('notes','notes.code_eleve','=','eleves.code')
-            ->join('element__modules','element__modules.code','=','notes.code_elm_mod')
-            ->join('modules','modules.code','=','element__modules.code_mod')
-            ->select('notes.*','modules.semestre','modules.code','element__modules.poids')
-            ->where('users.id','=',$user->id)
-            ->get();
-        return view('responsable\note_manip\note_index',compact('notes'));
+        $notes=Notes::all();
+        return view('responsable.note_manip.note_index',compact('notes'));
     }
 
     /**
@@ -41,7 +30,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('responsable\note_manip\create_note');
+        return view('responsable.note_manip.create_note');
     }
 
     /**
@@ -101,8 +90,8 @@ class NotesController extends Controller
     public function edit($id)
     {
         $note = Notes::findorfail($id);
-        
-        return view('responsable\note_manip\edit_note' , compact('note'));
+
+        return view('responsable.note_manip.edit_note' , compact('note'));
     }
 
     /**
@@ -114,7 +103,7 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $note = Notes::findorfail($id); 
+        $note = Notes::findorfail($id);
         $note->code_eleve = $request->code_eleve;
         $note->code_elm_mod =$request->code_elm_mod;
         $note->note =$request->note;

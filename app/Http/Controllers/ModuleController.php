@@ -15,7 +15,7 @@ class ModuleController extends Controller
     public function index()
     {
         $modules=Module::all();
-        return view('responsable\module_manip\module_index',compact('modules'));
+        return view('responsable.module_manip.module_index',compact('modules'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ModuleController extends Controller
      */
     public function create()
     {
-        return view('responsable/module_manip/create_module');
+        return view('responsable.module_manip.create_module');
     }
 
     /**
@@ -66,8 +66,8 @@ class ModuleController extends Controller
     public function edit($id)
     {
         $module = Module::findorfail($id);
-        
-        return view('responsable\module_manip\edit_module' , compact('module'));
+
+        return view('responsable.module_manip.edit_module' , compact('module'));
     }
 
     /**
@@ -79,7 +79,7 @@ class ModuleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $module = Module::findorfail($id); 
+        $module = Module::findorfail($id);
         $module->code = $request->code;
         $module->designation =$request->designation;
         $module->niveau =$request->niveau;
