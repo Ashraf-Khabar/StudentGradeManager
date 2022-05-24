@@ -52,7 +52,13 @@
                                     class="fa fa-pencil-square-o" style="font-size: 15px;"></i></a>
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-success" style="margin-left: 5px;background: rgb(218,13,50);" type="submit">
+                            <script>
+                                function ConfirmDelete()
+                                {
+                                    return confirm("Are you sure you want to delete?");
+                                }
+                            </script>
+                            <button Onclick="return ConfirmDelete();" class="btn btn-success" style="margin-left: 5px;background: rgb(218,13,50);" type="submit">
                                 <i class="fa fa-close" style="font-size: 20px;"></i></button>
                         </form>
             @endforeach
