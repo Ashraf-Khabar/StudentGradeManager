@@ -156,4 +156,18 @@ class NotesController extends Controller
         if(count($moyennes)==0)return  redirect('/resp_dashboard')->with('status','eleve note found or doesnt have moyennes');
         return view('responsable\consult\moyennes',compact('moyennes'));
     } 
+    public function show_eleve_note()
+    {
+        $user=Auth::user();
+        $notes=db::table('notes')
+                    ->join('element__modules','element__modules.code','=','notes.code_elm_mod')
+                    ->join('users','users.login','=','notes.code_eleve')
+                    ->select('notes.*','element__modules.code_mod','element__modules.code','element__modules.poids')
+                    ->where('users.id','=',$user->id)
+                    ->get();
+
+        return view('eleve_dashboard',compact('notes'));
+    } 
 }
+
+

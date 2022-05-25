@@ -22,6 +22,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a style="color: #dc3855" class="nav-link active" href="{{url('new-pass')}}">change password</a>
+                    </li>
+                    <li class="nav-item">
                         <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                     </li>
                     <li class="nav-item">
@@ -33,6 +36,7 @@
                             {{ csrf_field() }}
                         </form>
 
+
                     </li>
                 </ul>
             </div>
@@ -42,5 +46,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <div>
+        <table class="table table-hover table-bordered">
+            <thead class="bill-header cs">
+            <tr style="color: #be0a38 ; font-size: 15px">
+                
+                <th>module</th>
+                <th>element de module</th>
+                <th>poid</th>
+                <th>note</th>
+
+            </tr>
+            </thead>
+            <tbody class="text-center">
+            <tr class="warning no-result">
+                <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
+            </tr>
+            <tr>
+            @foreach ($notes as $item)
+                <tr style="color: #fc8a48 ;">
+                    <td  >{{$item->code_mod}}</td>
+                    <td  >{{$item->code_elm_mod}}</td>
+                    <td  >{{$item->poids}}</td>
+                    <td  >{{$item->note}}</td>
+                </tr>
+            @endforeach
+                    
+
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>

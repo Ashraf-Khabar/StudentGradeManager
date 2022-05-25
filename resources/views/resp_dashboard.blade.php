@@ -17,6 +17,8 @@
     </form>
 
     <br><a href="{{url('Modules')}}">modify modules</a>
+    <a href="{{url('new-pass')}}">change password</a>
+
     <br><a href="{{url('Element_Modules')}}">modify elements</a>
     <br><a href="{{url('Notes')}}">modify notes</a>
     @if (session('status'))
