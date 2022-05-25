@@ -19,7 +19,17 @@ class NotesController extends Controller
 
     public function index()
     {
-        $notes=Notes::all();
+        //$notes=Notes::all();
+        $user = Auth::user();
+        $notes = DB::table('users')
+            ->join('filieres', 'users.login', '=', 'filieres.responsable')
+            ->join('eleves','eleves.code_fil','=','filieres.code')
+            ->join('notes','notes.code_eleve','=','eleves.code')
+            ->join('element__modules','element__modules.code','=','notes.code_elm_mod')
+            ->join('modules','modules.code','=','element__modules.code_mod')
+            ->select('notes.*','modules.semestre','modules.code','element__modules.poids')
+            ->where('users.id','=',$user->id)
+            ->get();
         return view('responsable.note_manip.note_index',compact('notes'));
     }
 
