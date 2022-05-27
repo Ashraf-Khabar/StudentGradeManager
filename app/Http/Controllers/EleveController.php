@@ -70,7 +70,6 @@ class EleveController extends Controller
 
     {
         $eleve = Eleve::findorfail($id);
-
         return view('admin.eleve_manip.edit_eleve' , compact('eleve'));
     }
 
@@ -91,8 +90,6 @@ class EleveController extends Controller
         $eleve->login =$request->login;
         $eleve->update();
         return redirect()->back()->with('status','eleve updated successfully');
-
-
     }
 
     /**
