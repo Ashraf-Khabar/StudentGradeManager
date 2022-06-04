@@ -24,11 +24,11 @@
             <label for="prenom">prenom</label>
             <input type="text" name="prenom" value="{{$resp->prenom}}"><br>
             
-            <label for="niveau">departement</label>
-            <input type="text" name="departement" value="{{$eleve->niveau}}"><br>
+            <label for="departement">departement</label>
+            <input type="text" name="departement" value="{{$resp->departement}}"><br>
             
             <label for="login">login</label>
-            <input type="text" name="login" value="{{$eleve->login}}"><br>
+            <input type="text" name="login" value="{{$resp->login}}"><br>
 
             <input type="submit" value="update">
         </form>

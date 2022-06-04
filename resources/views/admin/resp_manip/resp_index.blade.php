@@ -14,7 +14,7 @@
 <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
     <div style="text-align: center;">
         <div class="main">
-            <h1 style="color: red">Student Informations</h1><br><br>
+            <h1 style="color: red">Teachers Informations</h1><br><br>
             <a style="text-decoration: none" class="button-24" role="button" href="{{url('admin_dashboard')}}">back</a>
             <br><br>
             <h5>{{session('status')}}</h5>

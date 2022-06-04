@@ -26,6 +26,10 @@
                     <li class="nav-item">
                         <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                     </li>
+                    <li class="nav-item">
+                        
+                        <a style="color: #dc3855" class="nav-link active" href="{{url('new-pass')}}">change password</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a style="color: #dc3855" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Modify
@@ -37,13 +41,21 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-
-    <br><a href="{{url('Modules')}}">modify modules</a>
-    <a href="{{url('new-pass')}}">change password</a>
-
-    <br><a href="{{url('Element_Modules')}}">modify elements</a>
-    <br><a href="{{url('Notes')}}">modify notes</a>
-    @if (session('status'))
+    
+    </div>
+                        <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Logout
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</section>
+@if (session('status'))
         <h3>{{session('status')}}</h3>
             
         @endif
@@ -65,7 +77,7 @@
                 <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
             </tr> --}}
             @foreach ($students as $item)
-                <tr style="color: #110505 ; background-color: #88f5c2">
+                <tr style="color: #be460a ;">
                     <td>{{$item->id}}</td>
                     <td>{{$item->code}}</td>
                     <td>{{$item->nom}}</td>
@@ -85,19 +97,6 @@
 
             </tbody>
         </table>
-    </div>
-                        <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
