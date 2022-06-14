@@ -10,7 +10,7 @@
     <div class="main">
         <h1>bilan</h1>
         <a href="{{url('resp_dashboard')}}"> back</a>
-        
+
     </div>
     <div class="show_records">
         <table>
@@ -19,8 +19,7 @@
                     <th>niveau</th>
                     <th>moyenne</th>
 
-                    
-                    
+
 
                 </tr>
             </thead>
@@ -29,7 +28,7 @@
                 <tr>
                 <td>{{$item->niveau}}</td>
                 <td>{{$item->note}}</td>
-            
+
                 </tr>
                 @endforeach
 
@@ -97,16 +96,13 @@
                 Back
             </a>
         </div>
-            
+
         </div>
         <table class="table table-hover table-bordered">
             <thead class="bill-header cs">
             <tr style="color: #be0a38 ; font-size: 15px">
-                
                 <th>niveau</th>
                 <th>note</th>
-                
-
             </tr>
             </thead>
             <tbody class="text-center">
@@ -118,12 +114,9 @@
                 <tr style="color: #fc8a48">
                 <td>{{$item->niveau}}</td>
                 <td>{{$item->note}}</td>
-                
-
-                
                 </tr>
                 @endforeach
-                    
+
 
             </tbody>
         </table>

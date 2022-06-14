@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="/assets/css/styles.min.css?h=820568f5bc17b2eadf42d912a6587674">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.min.css?h=620c8c37aafe1fc4766350dfc53ccc7d">
     <title>eleve</title>
 </head>
 <body>
@@ -27,7 +26,7 @@
                         <a style="color: #dc3855" class="nav-link active" href="/messages">Messages</a>
                     </li>
                     <li class="nav-item">
-                        
+
                         <a style="color: #dc3855" class="nav-link active" href="{{url('new-pass')}}">change password</a>
                     </li>
                     <li class="nav-item dropdown">
@@ -41,7 +40,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-    
+
     </div>
                         <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
@@ -55,12 +54,13 @@
         </div>
     </nav>
 </section>
-@if (session('status'))
+<div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
+    @if (session('status'))
         <h3>{{session('status')}}</h3>
-            
-        @endif
+
+    @endif
     <div class="students">
-        <table class="table table-hover table-bordered">
+        <table class="table table-hover table-bordered" >
             <thead class="bill-header cs">
             <tr style="color: #be0a38 ; font-size: 15px">
                 <th>ID</th>
@@ -69,7 +69,9 @@
                 <th>niveau</th>
                 <th>code filiere</th>
                 <th>login</th>
-                
+                <th>Notes</th>
+                <th>Moyenne</th>
+
             </tr>
             </thead>
             <tbody>
@@ -77,7 +79,7 @@
                 <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
             </tr> --}}
             @foreach ($students as $item)
-                <tr style="color: #be460a ;">
+                <tr style="color: #decdcd ; background-color: #2c2929">
                     <td>{{$item->id}}</td>
                     <td>{{$item->code}}</td>
                     <td>{{$item->nom}}</td>
@@ -85,18 +87,18 @@
                     <td>{{$item->code_fil}}</td>
                     <td>{{$item->login}}</td>
                     <td>
-                        
-                            <a href="{{url('Notes/'.$item->code)}}" >voir notes</a>
+                        <a href="{{url('Notes/'.$item->code)}}" class="btn btn-danger" style="margin-left: 5px;" type="submit">voir notes</a>
                     </td>
                     <td>
-                            <a href="{{url('moyennes/'.$item->code)}}" >voir moyenne</a>
-                            
-            @endforeach
+                        <a href="{{url('moyennes/'.$item->code)}}" class="btn btn-danger" style="margin-left: 5px;" type="submit">voir moyenne</a>
+                        @endforeach
                     </td>
                 </tr>
 
             </tbody>
         </table>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 

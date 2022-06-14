@@ -10,7 +10,7 @@
     <div class="main">
         <h1>bilan</h1>
         <a href="{{url('resp_dashboard')}}"> back</a>
-        
+
     </div>
     <div class="show_records">
         <table>
@@ -19,10 +19,6 @@
                     <th>module</th>
                     <th>element module</th>
                     <th>note</th>
-
-                    
-                    
-
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +28,7 @@
 
                 <td>{{$item->code_elm_mod}}</td>
                 <td>{{$item->note}}</td>
-                
+
 
                 {{-- <td><a href="{{url('Element_Modules/'.$item->id.'/edit')}}"> edit</a></td>
                 <td><form action="{{url('Element_Modules/'.$item->id)}}" method="POST">

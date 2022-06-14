@@ -20,7 +20,7 @@
                         @if (session('status'))
                             <div style="color: red; font-size: 30px"><i class="bi bi-check"></i> succefully</div>
                         @endif
-                        <form form action="{{url('Element_Modules/'.$element->id)}}" method="POST">
+                        <form action="{{url('Element_Modules/'.$element->id)}}" method="POST">
 
                             @csrf
                             @method('PUT')
