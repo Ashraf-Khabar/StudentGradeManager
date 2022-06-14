@@ -41,7 +41,7 @@
 
 {{-- //////////////////////////////// --}}
 
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -53,13 +53,16 @@
     <title>resp</title>
 </head>
 <body>
-    <section>
+
+<section>
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{route('welcome')}}">
                 <img src="../assets/img/monLogo.png" width="70px">
             </a>
-            <button style="background-color: #dc3855" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <button style="background-color: #dc3855" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon "></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -72,7 +75,8 @@
                     </li>
                     <li class="nav-item">
 
-                        <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}"
+                           onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -87,19 +91,21 @@
     </nav>
 </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-    <div>
-        <div class="main">
-            <h1 style="color: #dc3855" class="nav-link active">Bilan</h1>
-            <div>
-            <a style="color: #dc3855;width:5% ; border:2px solid #dc3855 ; margin-bottom:1em;" class="nav-link active " href="{{url('resp_dashboard')}}">
-                Back
-            </a>
-        </div>
+<div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
+    <div class="main">
+        <div style="text-align: center;">
+            <div class="main">
+                <h1 style="color: red">Bilan génerale</h1><br><br>
+                <a style="text-decoration: none" class="button-24" role="button"
+                   href="{{url('resp_dashboard')}}">Back</a>
 
+                <br><br>
+            </div>
         </div>
-        <table class="table table-hover table-bordered">
-            <thead class="bill-header cs">
+    </div>
+    <div class="container" >
+        <table class="table table-hover table-bordered"  >
+            <thead class="bill-header cs" >
             <tr style="color: #be0a38 ; font-size: 15px">
                 <th>niveau</th>
                 <th>note</th>
@@ -110,17 +116,20 @@
                 <td colspan="12"><i class="fa fa-warning"></i>&nbsp; No Result !!!</td>
             </tr>
             <tr>
-                @foreach ($moyennes as $item)
-                <tr style="color: #fc8a48">
-                <td>{{$item->niveau}}</td>
-                <td>{{$item->note}}</td>
+            @foreach ($moyennes as $item)
+                <tr style="color: #fc8a48 ; background-color: #2c2929" >
+                    <td>{{$item->niveau}}</td>
+                    <td>{{$item->note}}</td>
                 </tr>
-                @endforeach
+            @endforeach
 
 
             </tbody>
         </table>
     </div>
+</div>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

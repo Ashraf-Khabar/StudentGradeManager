@@ -57,9 +57,8 @@
 <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
     @if (session('status'))
         <h3>{{session('status')}}</h3>
-
     @endif
-    <div class="students">
+    <div class="container">
         <table class="table table-hover table-bordered" >
             <thead class="bill-header cs">
             <tr style="color: #be0a38 ; font-size: 15px">
@@ -71,7 +70,6 @@
                 <th>login</th>
                 <th>Notes</th>
                 <th>Moyenne</th>
-
             </tr>
             </thead>
             <tbody>
