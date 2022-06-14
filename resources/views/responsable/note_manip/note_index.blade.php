@@ -11,12 +11,7 @@
     <title>manipulation des note</title>
 </head>
 <body>
-    <div class="main">
-        <h1>posts</h1>
-        <a href="{{url('resp_dashboard')}}"> back</a>
-        <a href="{{url('Notes/create')}}">create</a>
-        <h5>{{session('status')}}</h5>
-    </div>
+
     <div class="show_records">
         <table>
             <thead>
@@ -28,8 +23,6 @@
                     <th>semestre</th>
                     <th>poids</th>
                     <th>note</th>
-                    
-                    
 
 <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
     <div style="text-align: center;">
