@@ -21,7 +21,7 @@
                 <form action="{{url('Filieres')}}" method="POST">
 
                     @csrf
-                    @method('PUT')
+
                     <x-label for="code">code</x-label>
                     <input type="text" name="code"><br>
 
@@ -35,7 +35,7 @@
                     </center>
                 </form>
                 <center>
-                    <br><a style="text-decoration: none" class="button-24" role="button" href="{{url('Eleves')}}">back</a>
+                    <br><a style="text-decoration: none" class="button-24" role="button" href="{{url('Filieres')}}">back</a>
                 </center>
                 </form>
             @endauth
