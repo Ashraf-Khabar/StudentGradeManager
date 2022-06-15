@@ -69,12 +69,7 @@ Route::middleware(['auth', 'resp'])->group(function(){
 });
 Route::middleware(['auth', 'eleve'])->group(function(){
     Route::get('notes/{id}',[NotesController::class,'show_eleve_note']);
-
-    
-    
-    
-
-
+    Route::get('moyennes_elv',[NotesController::class,'show_moy_elv']);
 });
 
 require __DIR__.'/auth.php';

@@ -13,8 +13,8 @@ class NotesController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     * 
-     * 
+     *
+     *
      */
 
     public function index()
@@ -50,7 +50,7 @@ class NotesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   
+    {
         $user = Auth::user();
         $test=db::table('users')
                     ->join('filieres','filieres.responsable','=','users.login')
@@ -79,17 +79,17 @@ class NotesController extends Controller
         $user=Auth::user();
         $notes=db::table('notes')
                     ->join('element__modules','element__modules.code','=','notes.code_elm_mod')
-                    
+
                     ->join('eleves','eleves.code','=','notes.code_eleve')
                     ->join('filieres','eleves.code_fil','=','filieres.code')
-                    ->join('users', 'users.login', '=', 'filieres.responsable') 
+                    ->join('users', 'users.login', '=', 'filieres.responsable')
                     ->select('notes.*','element__modules.code_mod')
                     ->where('notes.code_eleve','=',$id)
                     ->where('users.id','=',$user->id)
                     ->get();
         if(count($notes)==0)return  redirect('/resp_dashboard')->with('status','eleve note found or doesnt have notes');
         return view('responsable\consult\notes',compact('notes'));
-    } 
+    }
 
     /**
      * Show the form for editing the specified resource.
@@ -145,29 +145,44 @@ class NotesController extends Controller
     {
         $user=Auth::user();
         $moyennes=db::table('moyennes')
-                    
+
                     ->join('eleves','eleves.code','=','moyennes.code_eleve')
                     ->join('filieres','eleves.code_fil','=','filieres.code')
-                    ->join('users', 'users.login', '=', 'filieres.responsable') 
+                    ->join('users', 'users.login', '=', 'filieres.responsable')
                     ->select('moyennes.*')
                     ->where('moyennes.code_eleve','=',$id)
                     ->where('users.id','=',$user->id)
                     ->get();
         if(count($moyennes)==0)return  redirect('/resp_dashboard')->with('status','eleve note found or doesnt have moyennes');
         return view('responsable\consult\moyennes',compact('moyennes'));
-    } 
+    }
     public function show_eleve_note()
     {
         $user=Auth::user();
         $notes=db::table('notes')
                     ->join('element__modules','element__modules.code','=','notes.code_elm_mod')
-                    ->join('users','users.login','=','notes.code_eleve')
+                    ->join('eleves','eleves.code','=','notes.code_eleve')
+                    ->join('users','users.login','=','eleves.login')
                     ->select('notes.*','element__modules.code_mod','element__modules.code','element__modules.poids')
                     ->where('users.id','=',$user->id)
                     ->get();
-
         return view('eleve_dashboard',compact('notes'));
-    } 
+    }
+
+    public function show_moy_elv()
+    {
+        $user=Auth::user();
+        $moyennes=db::table('moyennes')
+
+            ->join('eleves','eleves.code','=','moyennes.code_eleve')
+            ->join('users', 'users.login', '=', 'eleves.login')
+            ->select('moyennes.*')
+            ->where('users.id','=',$user->id)
+            ->get();
+        if(count($moyennes)==0)
+            return  redirect()->back()->with('status','no moyennes available') ;
+        return view('eleve\moyenne',compact('moyennes'));
+    }
 }
 
 
