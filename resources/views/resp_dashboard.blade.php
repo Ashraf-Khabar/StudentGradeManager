@@ -29,6 +29,7 @@
 
                         <a style="color: #dc3855" class="nav-link active" href="{{url('new-pass')}}">change password</a>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a style="color: #dc3855" class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Modify
@@ -40,8 +41,6 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-
-    </div>
                         <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>
@@ -49,6 +48,7 @@
                             {{ csrf_field() }}
                         </form>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -56,7 +56,10 @@
 </section>
 <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
     @if (session('status'))
-        <h3>{{session('status')}}</h3>
+        <center>
+            <h3 style="color: red"><span>!!!     </span></soan></pan>{{session('status')}}</h3>
+            <br><br><br>
+        </center>
     @endif
     <div class="container">
         <table class="table table-hover table-bordered" >

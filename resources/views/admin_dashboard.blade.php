@@ -44,7 +44,6 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-
                         <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>

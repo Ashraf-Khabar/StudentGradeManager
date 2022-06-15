@@ -48,8 +48,6 @@
 
     </div>
 </section>
-
-
 <script src="/assets/js/script.min.js?h=61b199fb697993962b723c8a3c9b2b78"></script>
 </body>
 </html>
