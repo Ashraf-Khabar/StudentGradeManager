@@ -15,7 +15,7 @@ class Responsable_filiereController extends Controller
     public function index()
     {
         $resp=Responsable_filiere::all();
-        return view('admin.resp_manip.resp_index',compact('resp'));
+        return view('admin\resp_manip\resp_index',compact('resp'));
     }
 
     /**

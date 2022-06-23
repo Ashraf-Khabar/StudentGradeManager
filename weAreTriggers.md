@@ -85,17 +85,128 @@ begin
 end ;
 
 ```
+trigger auto increment : 
+
+```sql
+create trigger USERS_ID_TRG
+    before insert
+    on USERS
+    for each row
+begin
+    if :new.ID is null then
+        select users_id_seq.nextval into :new.ID from dual;
+    end if;
+end;
+/
+```
+
+```sql
+create trigger RESPONSABLE_FILIERES_ID_TRG
+    before insert
+    on RESPONSABLE_FILIERES
+    for each row
+begin
+            if :new.ID is null then
+                select responsable_filieres_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+/
+```
+
+```sql
+create trigger PERSONAL_ACCESS_TOKENS_ID_TRG
+    before insert
+    on PERSONAL_ACCESS_TOKENS
+    for each row
+begin
+            if :new.ID is null then
+                select personal_access_tokens_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+create trigger MOYENNES_ID_TRG
+    before insert
+    on MOYENNES
+    for each row
+begin
+            if :new.ID is null then
+                select moyennes_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+
+```sql
+create trigger MODULES_ID_TRG
+    before insert
+    on MODULES
+    for each row
+begin
+            if :new.ID is null then
+                select modules_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+
+create trigger MIGRATIONS_ID_TRG
+    before insert
+    on MIGRATIONS
+    for each row
+begin
+            if :new.ID is null then
+                select migrations_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+create trigger FILIERES_ID_TRG
+    before insert
+    on FILIERES
+    for each row
+begin
+            if :new.ID is null then
+                select filieres_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+create trigger FAILED_JOBS_ID_TRG
+    before insert
+    on FAILED_JOBS
+    for each row
+begin
+            if :new.ID is null then
+                select failed_jobs_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+create trigger ELEVES_ID_TRG
+    before insert
+    on ELEVES
+    for each row
+begin
+            if :new.ID is null then
+                select eleves_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
+create trigger ELEMENT__MODULES_ID_TRG
+    before insert
+    on ELEMENT__MODULES
+    for each row
+begin
+            if :new.ID is null then
+                select element__modules_id_seq.nextval into :new.ID from dual;
+            end if;
+            end;
+```
+```sql
 
 
-
-
-
-
-
-
-
-
-
+```
 
 
 

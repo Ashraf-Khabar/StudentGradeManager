@@ -23,6 +23,9 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <a style="color: #dc3855" class="nav-link active" href="new-pass">change password</a>
+                    </li>
+                    <li class="nav-item">
                         @if (Route::has('register'))
                             <a style="color: #dc3855" href="{{ route('register') }}" class="nav-link active" >Register</a>
                         @endif
@@ -41,7 +44,6 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-
                         <a style="color: #dc3855" class="nav-link active" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Logout
                         </a>

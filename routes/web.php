@@ -7,6 +7,7 @@ use App\Http\Controllers\FiliereController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\Element_ModuleController;
 use App\Http\Controllers\NotesController;
+use App\Http\Controllers\Auth\update_passwordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,17 +29,24 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 
+Route::middleware(['auth'])->group(function(){
+    Route::post('/update-pass',[update_passwordController::class,'store']);
+    Route::get('/new-pass',function(){
+        return view('auth.update-password');
+    });
+});
+
 Route::get('/admin_dashboard', function () {
     return view('admin_dashboard');
 })->middleware(['auth', 'admin'])->name('admin_dashboard');
 
-Route::get('/resp_dashboard', function () {
-    return view('resp_dashboard');
-})->middleware(['auth', 'resp'])->name('resp_dashboard');
+Route::get('/resp_dashboard', [EleveController::class, 'send_stu']
+)->middleware(['auth', 'resp'])->name('resp_dashboard');
 
-Route::get('/eleve_dashboard', function () {
-    return view('eleve_dashboard');
-})->middleware(['auth', 'eleve'])->name('eleve_dashboard');
+
+
+Route::get('/eleve_dashboard', [NotesController::class, 'show_eleve_note']
+)->middleware(['auth', 'eleve'])->name('eleve_dashboard');
 
 // Route::redirect('auth\register')->middleware(['auth', 'admin'])->name('admtoreg');
 Route::middleware(['auth', 'admin'])->group(function(){
@@ -56,8 +64,12 @@ Route::middleware(['auth', 'resp'])->group(function(){
     Route::resource('Modules',ModuleController::class);
     Route::resource('Element_Modules',Element_ModuleController::class);
     Route::resource('Notes',NotesController::class);
+    Route::get('moyennes/{id}',[NotesController::class,'show_moy']);
 
-
+});
+Route::middleware(['auth', 'eleve'])->group(function(){
+    Route::get('notes/{id}',[NotesController::class,'show_eleve_note']);
+    Route::get('moyennes_elv',[NotesController::class,'show_moy_elv']);
 });
 
 require __DIR__.'/auth.php';

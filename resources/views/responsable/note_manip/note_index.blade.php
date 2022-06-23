@@ -12,16 +12,20 @@
 </head>
 <body>
 
+
+
 <div class="col-md-12 search-table-col"><span class="counter pull-right"></span>
-    <div style="text-align: center;">
-        <div class="main">
-            <h1 style="color: red">Notes Informations</h1><br><br>
-            <a style="text-decoration: none" class="button-24" role="button" href="{{url('resp_dashboard')}}">back</a>
-            <a style="text-decoration: none" class="button-24" role="button" href="{{url('Notes/create')}}">Create</a><br><br>
-            <h5>{{session('status')}}</h5>
+    <div class="main">
+        <div style="text-align: center;">
+            <div class="main">
+                <h1 style="color: red">Notes Informations</h1><br><br>
+                <a style="text-decoration: none" class="button-24" role="button" href="{{url('resp_dashboard')}}">back</a>
+                <a style="text-decoration: none" class="button-24" role="button" href="{{url('Notes/create')}}">Create</a><br><br>
+                <h5>{{session('status')}}</h5>
+            </div>
         </div>
     </div>
-    <div class="table-responsive table table-hover table-bordered results">
+    <div class="container">
         <table class="table table-hover table-bordered">
             <thead class="bill-header cs" >
             <tr style="color: #be0a38 ; font-size: 15px" >

@@ -22,7 +22,7 @@
         </div>
     </div>
 
-    <div class="table-responsive table table-hover table-bordered results">
+    <div class="container">
         <table class="table table-hover table-bordered">
             <thead class="bill-header cs">
             <tr style="color: #be0a38 ; font-size: 15px">

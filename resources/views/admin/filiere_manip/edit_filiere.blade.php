@@ -11,10 +11,10 @@
         @auth
         @if (session('status'))
             <div>succefully</div>
-        
+
         @endif
          <form action="{{url('Filieres/'.$filiere->id)}}" method="POST">
-            
+
             @csrf
             @method('PUT')
             <label for="code">code</label>
@@ -22,17 +22,17 @@
 
             <label for="designation">designation</label>
             <input type="text" name="designation" value="{{$filiere->designation}}"><br>
-            
+
             <label for="responsable">responsable</label>
             <input type="text" name="responsable" value="{{$filiere->responsable}}"><br>
-        
+
 
             <input type="submit" value="update">
         </form>
         <a href="{{url('Filieres')}}">back</a>
-        
-        
-        </form>   
+
+
+        </form>
         @endauth
     </div>
 </body>
