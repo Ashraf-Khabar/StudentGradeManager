@@ -1,6 +1,5 @@
 # StudentGradeManager
 <img src="https://img.shields.io/badge/Made%20by-Ashraf%20Khabar-blue" alt="made by Ashraf Khabar"> <img src="https://img.shields.io/badge/Made%20by-Bilale%20Mesaouri-blue" alt="made by Bilale Mesaouri"> <img src="https://img.shields.io/badge/Made%20by-Khawla%20Laabidi-blue" alt="made by Khawla Laabidi"> <img src="https://img.shields.io/badge/Framed%20by-Mr.%20Mohammed%20Ghailani-blue" alt="Framed by Mr. Mohammed Ghailani">
-<p align="center"><a href="" target="_blank"><img src="public/assets/img/monLogo.png" width="200"></a></p>
 
 
 ## Table de project 
