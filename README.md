@@ -8,9 +8,9 @@
 </p>
 
 <p align="center">
-  <a href="https://nodejs.org/en/"> <img src="![image](https://user-images.githubusercontent.com/95541956/216224428-59371c20-ced1-4e6f-a01e-3418ca5a6dfa.png)" alt="php" height="70"></a>
+  <a href="https://nodejs.org/en/"> <img src="https://www.php.net/images/logos/new-php-logo.svg" alt="php" height="70"></a>
   <a href="https://expressjs.com"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/985px-Laravel.svg.png" alt="laravel" height="70"></a>
-  <a href="https://expressjs.com"> <img src="http://assets.stickpng.com/thumbs/584817d6cef1014c0b5e4999.png" alt="oracle" height="70"></a>
+  <a href="https://expressjs.com"> <img src="[http://assets.stickpng.com/thumbs/584817d6cef1014c0b5e4999.png](https://purepng.com/public/uploads/large/purepng.com-oracle-logologobrand-logoiconslogos-251519939873wlyup.png)" alt="oracle" height="70"></a>
  </p>
 
 <h1 align="center">Student Grade Management Application</h1>
